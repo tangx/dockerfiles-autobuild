@@ -3,8 +3,12 @@
 用于配合 [sniproxy](/sniproxy/README.md) 实现域名代理
 
 
-```
-docker run --rm -d -e SNIPROXY=127.0.0.1 uyinn28/dnsmasq
+```bash
+docker run --rm -d \
+                --name dnsmasq \
+                -p 53:53 \
+                -e SNIPROXY=127.0.0.1 \
+            uyinn28/dnsmasq
 ```
 
 ```
