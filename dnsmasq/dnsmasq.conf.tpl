@@ -451,6 +451,7 @@ address=/.quantserve.com/${SNIPROXY}
 address=/.dw.com/${SNIPROXY}
 address=/.diggbt.net/${SNIPROXY}
 address=/.nissanforums.com/${SNIPROXY}
+address=/.gcr.io/${SNIPROXY}
 
 # Country
 address=/.jp/${SNIPROXY}
