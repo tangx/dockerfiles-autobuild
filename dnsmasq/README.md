@@ -4,23 +4,11 @@
 
 
 ```bash
-docker run --rm -d \
-                --name dnsmasq \
-                -p 53:53 \
-                -e SNIPROXY=127.0.0.1 \
-            uyinn28/dnsmasq
-```
-
-```
-#!/bin/sh
-# /entrypoint.sh
-
-
-PORT=${PORT:-53}
-LISTEN=${LISTEN:-0.0.0.0}
-SNIPROXY=${SNIPROXY:-127.0.0.1}
-
-cat /data/dnsmasq.conf.tpl | /bin/envsubst > /etc/dnsmasq.conf
-
-/usr/sbin/dnsmasq -C /etc/dnsmasq.conf ${ARGS} -k
+export SNIPROXY=127.0.0.1
+docker run -d --restart always \
+            --cap-add=NET_ADMIN  \
+            -e SNIPROXY=${SNIPROXY} \
+            -p 53:53/udp -p 53:53/tcp  \
+            --name dnsmasq  \
+        uyinn28/dnsmasq
 ```
