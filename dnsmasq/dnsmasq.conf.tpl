@@ -1,5 +1,4 @@
 port=${PORT}
-listen-address=${LISTEN}
 no-hosts
 
 # log-facility=/dev/stdout

@@ -3,4 +3,5 @@
 
 cd $(dirname $0)
 
-docker build . -t dnsmasq:manual
+docker build . -t dnsmasq:manual $@
+
