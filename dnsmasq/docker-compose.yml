@@ -1,0 +1,13 @@
+version: '3'
+
+services: 
+  dnsmasq:
+    image: uyinn28/dnsmasq:latest
+    ports:
+      - "53:53/tcp"
+      - "53:53/udp"
+    environment: 
+      SNIPROXY: ${SNIPROXY}
+    cap_add:
+      - NET_ADMIN
+    network_mode: default
