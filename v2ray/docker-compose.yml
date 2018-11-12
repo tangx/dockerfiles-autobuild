@@ -6,6 +6,7 @@ services:
     environment: 
       # online uuid generator
       ### https://www.uuidgenerator.net/
+      ### curl https://www.uuidgenerator.net/api/version4
       VMESS_UUID: ae3abee0-0000-0000-0000-3a2a26bdd204
     ports:
       - "58080:8080"
