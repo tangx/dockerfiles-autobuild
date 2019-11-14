@@ -10,6 +10,7 @@ RUN apk --no-cache add \
 
 ADD vmess-config.json.tpl /etc/v2ray/vmess-config.json.tpl
 ADD entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
 
 CMD ["/bin/sh", "/entrypoint.sh" ]
 
