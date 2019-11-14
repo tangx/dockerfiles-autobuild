@@ -8,7 +8,7 @@ RUN apk --no-cache add \
     && apk --purge del \
            gettext
 
-ADD vmess-config.json.tpl /etc/v2ray/vmess-config.json.tpl
+ADD server.config.json.tpl /etc/v2ray/server.config.json.tpl
 ADD entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
 
