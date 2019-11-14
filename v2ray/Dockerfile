@@ -1,15 +1,12 @@
 FROM v2ray/official
 
+RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories
 RUN apk --no-cache add \
         gettext   \
         libintl \
     && cp /usr/bin/envsubst /bin/envsubst \
     && apk --purge del \
            gettext
-
-# RUN wget -c https://github.com/tianon/gosu/releases/download/1.10/gosu-amd64 -o /bin/gosu \
-#     && chmod +x gosu \
-#     && adduser -D v2ray
 
 ADD vmess-config.json.tpl /etc/v2ray/vmess-config.json.tpl
 ADD entrypoint.sh /entrypoint.sh

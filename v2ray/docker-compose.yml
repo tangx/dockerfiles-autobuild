@@ -1,13 +1,16 @@
-version: '2'
+version: '3'
 
 services: 
-  v2ray:
+  v2rayserver:
+    network_mode: default  # use default bridge network
+    restart: always
     image: uyinn28/v2ray:latest
+    build:
+      context: .
     environment: 
       # online uuid generator
       ### https://www.uuidgenerator.net/
       ### curl https://www.uuidgenerator.net/api/version4
       VMESS_UUID: ae3abee0-0000-0000-0000-3a2a26bdd204
     ports:
-      - "58080:8080"
-    network_mode: bridge  # use default bridge network
+      - "62332:8080"
