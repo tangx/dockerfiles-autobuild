@@ -5,8 +5,7 @@ services:
     network_mode: default  # use default bridge network
     restart: always
     image: uyinn28/v2ray:latest
-    build:
-      context: .
+
     environment: 
       # online uuid generator
       ### https://www.uuidgenerator.net/

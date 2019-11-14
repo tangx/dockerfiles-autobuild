@@ -1,0 +1,7 @@
+version: '3'
+
+services:
+  v2rayserver:
+    build:
+      context: .
+      
