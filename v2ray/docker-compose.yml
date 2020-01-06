@@ -4,10 +4,12 @@ services:
   v2rayserver:
     network_mode: default  # use default bridge network
     restart: always
+    ### faq: https://www.v2ray.com/chapter_00/faq.html#errors
     image: uyinn28/v2ray:latest
     environment: 
       ### curl -s https://www.uuidgenerator.net/api/version4
       VMESS_UUID: ae3abee0-0000-0000-0000-3a2a26bdd204
+      ALERTID: 64
       MODE: server
     ports:
       - "8080:8081"
